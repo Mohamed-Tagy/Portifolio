@@ -25,6 +25,7 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://mohamed-tagy.vercel.app"),
   title: "Mohamed Tagy — Solution Architect Track · Systems Engineer",
   description:
     "Mohamed Waleed Tagy builds systems that keep watch: Dynamics 365 and Power Platform solutions delivered to sign-off, real-time computer vision on bare CPUs (99.2% ViT), marine radar commissioned in the field, and freelance web portals in production. Alexandria, Egypt.",
@@ -42,6 +43,7 @@ export const metadata: Metadata = {
     "Alexandria",
   ],
   openGraph: {
+    url: "https://mohamed-tagy.vercel.app",
     title: "Mohamed Tagy — Solution Architect Track · Systems Engineer",
     description:
       "Systems that keep watch — Dynamics 365 solutions, computer vision, marine radar, freelance web delivery. Alexandria, Egypt.",

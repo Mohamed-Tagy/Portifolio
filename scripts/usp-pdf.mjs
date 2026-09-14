@@ -131,7 +131,7 @@ const html = `<!doctype html>
   <footer>
     <span class="contact">
       <span>mohamed.120230167@ejust.edu.eg&nbsp;&nbsp;·&nbsp;&nbsp;+20 100 876 5599</span>
-      <span>github.com/Mohamed-Tagy&nbsp;&nbsp;·&nbsp;&nbsp;linkedin.com/in/mohamed-tagy</span>
+      <span>mohamed-tagy.vercel.app&nbsp;&nbsp;·&nbsp;&nbsp;github.com/Mohamed-Tagy&nbsp;&nbsp;·&nbsp;&nbsp;linkedin.com/in/mohamed-tagy</span>
     </span>
     <span class="nmea">$MWUSP,V1,ALX*7E</span>
   </footer>
