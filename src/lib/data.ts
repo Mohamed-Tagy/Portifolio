@@ -3,7 +3,7 @@
 export const identity = {
   name: "Mohamed Waleed Tagy",
   shortName: "M.W. TAGY",
-  role: "Solution Architect Track · Systems Engineer",
+  role: "Solution Architect & Developer",
   base: "Alexandria, Egypt",
   coordinates: "31°12′N 29°55′E",
   email: "mohamed.120230167@ejust.edu.eg",
@@ -23,9 +23,11 @@ export const nav = [
 ] as const;
 
 export const hero = {
-  eyebrowA: "MOHAMED WALEED TAGY",
-  eyebrowB: "SOLUTION ARCHITECT TRACK — ALEXANDRIA, EG",
-  /* lines of the headline; the serif-italic accent word is marked inline */
+  name: ["Mohamed", "Waleed Tagy"],
+  title: "Solution Architect & Developer",
+  affiliation: "Intern @ Systems Limited — CSE @ E-JUST, Class of 2028",
+  eyebrowA: "SYSTEMS THAT KEEP WATCH",
+  eyebrowB: "31°12′N 29°55′E — ALEXANDRIA, EG",
   sub: "Vision models on bare CPUs. Radar on live stations. Business platforms and client portals shipped to sign-off. I work the seam where software meets hardware — and stay until it holds.",
   primaryCta: { label: "View selected work", href: "#projects" },
   secondaryCta: { label: "Get in touch", href: "#contact" },
@@ -48,6 +50,21 @@ export const about = {
     { value: 2, pad: 2, suffix: "", label: "Real-time systems shipped" },
     { value: 2, pad: 2, suffix: "", label: "Freelance web apps delivered" },
     { value: 15, pad: 2, suffix: "+", label: "Technologies in active use" },
+  ],
+};
+
+/* Must stay in step with B:\Me\usp.md, the canonical messaging file. */
+export const usp = {
+  label: "What sets me apart",
+  lead: "Most developers hand you code.",
+  claim: { before: "I hand you a", accent: "verified", after: "system." },
+  body: "I've repaired marine electronics at board level, commissioned radar at live field sites, trained a Vision Transformer that runs on a bare CPU, and delivered Dynamics 365 solutions from requirements to sign-off. That's first-hand knowledge of every layer a solution touches — and nothing I deliver ships until it's tested and verified.",
+  proofs: [
+    "Board-level repair",
+    "Radar commissioned",
+    "99.2% ViT · 15 FPS on CPU",
+    "D365 · BRD → sign-off",
+    "Client portal in production",
   ],
 };
 

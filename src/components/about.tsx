@@ -1,6 +1,6 @@
 "use client";
 
-import { about, identity } from "@/lib/data";
+import { about, identity, usp } from "@/lib/data";
 import { Counter, Rise, TickFrame } from "./primitives";
 import { SectionHead } from "./section-head";
 
@@ -22,6 +22,55 @@ export function About() {
             </span>,
           ]}
         />
+
+        {/* USP — the claim stated plainly, with its evidence beneath */}
+        <Rise className="mb-16 md:mb-24" amount={0.25}>
+          <div className="relative rounded-[2px] border border-beacon/30 bg-panel px-6 py-9 md:px-12 md:py-12">
+            <TickFrame />
+            <p className="eyebrow flex items-center gap-3 text-beacon">
+              <span className="inline-block h-1.5 w-1.5 animate-blink rounded-full bg-beacon" />
+              [USP] — {usp.label}
+            </p>
+            <p className="mt-6 max-w-5xl text-balance font-sans text-[clamp(1.75rem,3.6vw,3.1rem)] font-bold leading-[1.12] tracking-[-0.01em] text-haze">
+              {usp.lead}{" "}
+              <span className="text-fog">
+                {usp.claim.before}{" "}
+                <span className="accent-serif text-beacon">
+                  {usp.claim.accent}
+                </span>{" "}
+                {usp.claim.after}
+              </span>
+            </p>
+            <p className="mt-6 max-w-3xl text-pretty leading-relaxed text-haze md:text-lg">
+              {usp.body}
+            </p>
+            <ul
+              aria-label="Evidence"
+              className="mt-8 flex flex-wrap gap-2 border-t border-fog/10 pt-6"
+            >
+              {usp.proofs.map((proof) => (
+                <li
+                  key={proof}
+                  className="flex items-center gap-2 rounded-[2px] border border-fog/12 px-3 py-2 font-mono text-[0.625rem] uppercase tracking-[0.14em] text-fog"
+                >
+                  <svg
+                    viewBox="0 0 12 12"
+                    className="h-2.5 w-2.5 text-beacon"
+                    aria-hidden
+                  >
+                    <path
+                      d="M2 6.5 4.8 9 10 3"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.6"
+                    />
+                  </svg>
+                  {proof}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </Rise>
 
         <div className="grid gap-14 lg:grid-cols-12 lg:gap-10">
           {/* bio + stats */}

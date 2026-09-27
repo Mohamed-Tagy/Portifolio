@@ -2,7 +2,9 @@
    post-boot hero with the new dark atmosphere. */
 import puppeteer from "puppeteer-core";
 
-const OUT = "C:/Users/Admin/AppData/Local/Temp/claude/B--Me/7520bd80-10f2-4aa6-ad16-2c7a76ec6db4/scratchpad";
+const OUT =
+  process.env.SHOT_DIR ??
+  "C:/Users/Admin/AppData/Local/Temp/claude/B--Me/ce2ebc0d-770f-4dcf-a834-aea1507de523/scratchpad";
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 const browser = await puppeteer.launch({
@@ -13,7 +15,8 @@ const browser = await puppeteer.launch({
 try {
   const page = await browser.newPage();
   await page.setViewport({ width: 1440, height: 900, deviceScaleFactor: 1.5 });
-  await page.goto("http://localhost:3000", { waitUntil: "domcontentloaded" });
+  const URL = process.argv[2] ?? "http://localhost:3000";
+  await page.goto(URL, { waitUntil: "domcontentloaded" });
   await page.addStyleTag({ content: "nextjs-portal{display:none!important}" });
 
   /* wait for the boot screen to mount */
@@ -52,7 +55,7 @@ try {
       localStorage.setItem("mwt-theme", "day");
     } catch {}
   });
-  await day.goto("http://localhost:3000", { waitUntil: "networkidle2" });
+  await day.goto(URL, { waitUntil: "networkidle2" });
   await day.addStyleTag({ content: "nextjs-portal{display:none!important}" });
   await sleep(1800);
   await day.screenshot({ path: `${OUT}/hero-day.jpg`, type: "jpeg", quality: 90 });

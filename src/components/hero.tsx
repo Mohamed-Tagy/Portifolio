@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import { hero, identity, nmea } from "@/lib/data";
 import { EASE_OUT } from "@/lib/motion";
+import { Portrait } from "./portrait";
 import { Button, MaskLines, PointerGlow, ULink } from "./primitives";
 import { useScrollTo } from "./providers";
 
@@ -30,72 +31,92 @@ export function Hero({ booted }: { booted: boolean }) {
 
       <motion.div
         style={{ opacity: fade, y: drift }}
-        className="relative z-10 mx-auto flex w-full max-w-[90rem] flex-1 flex-col justify-center px-6 pb-24 pt-32 md:px-10 md:pb-28"
+        className="relative z-10 mx-auto flex w-full max-w-[90rem] flex-1 flex-col justify-center px-6 pb-20 pt-28 md:px-10 md:pb-24 md:pt-32"
       >
-        {/* chart annotation */}
-        <motion.div
-          className="mb-8 flex flex-wrap items-center gap-x-6 gap-y-2 md:mb-10"
-          initial={{ opacity: 0, y: 14 }}
-          animate={booted ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, ease: EASE_OUT, delay: 0.25 }}
-        >
-          <span className="eyebrow text-fog">{hero.eyebrowA}</span>
-          <span aria-hidden className="hidden h-px w-10 bg-fog/20 sm:block" />
-          <span className="eyebrow">{hero.eyebrowB}</span>
-        </motion.div>
-
-        {/* headline — three voices of the chart: roman caps, roman caps, italic hydrography */}
-        <h1 className="select-none">
-          <MaskLines
-            animate={state}
-            startIndex={3}
-            className="font-sans font-black uppercase leading-[0.92] tracking-[-0.015em] [font-stretch:122%] text-[clamp(3.2rem,11.5vw,10rem)]"
-            lines={[
-              "Systems",
-              "that keep",
-              <span key="w" className="accent-serif normal-case text-beacon">
-                watch<span className="text-fog">.</span>
-              </span>,
-            ]}
-          />
-        </h1>
-
-        <div className="mt-10 grid gap-10 md:mt-14 md:grid-cols-12 md:items-end">
-          <motion.p
-            className="max-w-md text-pretty text-base leading-relaxed text-haze md:col-span-6 lg:col-span-5"
-            initial={{ opacity: 0, y: 18 }}
-            animate={booted ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, ease: EASE_OUT, delay: 0.75 }}
-          >
-            {hero.sub}
-          </motion.p>
-
-          <motion.div
-            className="flex flex-wrap items-center gap-4 md:col-span-6 lg:col-span-7 md:justify-end"
-            initial={{ opacity: 0, y: 18 }}
-            animate={booted ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, ease: EASE_OUT, delay: 0.85 }}
-          >
-            <Button
-              href={hero.primaryCta.href}
-              onClick={(e) => {
-                e.preventDefault();
-                scrollTo("projects");
-              }}
+        <div className="grid gap-y-10 lg:grid-cols-12 lg:gap-x-10 lg:gap-y-12">
+          {/* identity — the two largest voices on the page */}
+          <div className="lg:col-span-8">
+            <motion.div
+              className="mb-6 flex flex-wrap items-center gap-x-6 gap-y-2 md:mb-8"
+              initial={{ opacity: 0, y: 14 }}
+              animate={booted ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.7, ease: EASE_OUT, delay: 0.25 }}
             >
-              {hero.primaryCta.label}
-            </Button>
-            <Button
-              href={hero.secondaryCta.href}
-              variant="ghost"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollTo("contact");
-              }}
+              <span className="eyebrow flex items-center gap-2 text-fog">
+                <span className="inline-block h-1.5 w-1.5 rounded-full bg-beacon" />
+                {hero.eyebrowA}
+              </span>
+              <span aria-hidden className="hidden h-px w-10 bg-fog/20 sm:block" />
+              <span className="eyebrow">{hero.eyebrowB}</span>
+            </motion.div>
+
+            <h1>
+              <MaskLines
+                animate={state}
+                startIndex={3}
+                className="font-sans font-black uppercase leading-[0.9] tracking-[-0.015em] [font-stretch:122%] text-[11.6vw] lg:text-[clamp(4.5rem,7.4vw,7.25rem)]"
+                lines={hero.name}
+              />
+              <MaskLines
+                animate={state}
+                startIndex={5}
+                className="accent-serif mt-3 leading-[1.12] text-beacon text-[clamp(1.75rem,7.2vw,2.6rem)] lg:mt-4 lg:text-[clamp(2.2rem,3.3vw,3.25rem)]"
+                lines={[hero.title]}
+              />
+            </h1>
+
+            <motion.p
+              className="mt-5 font-mono text-[0.6875rem] uppercase tracking-[0.16em] text-haze md:mt-6"
+              initial={{ opacity: 0, y: 14 }}
+              animate={booted ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.7, ease: EASE_OUT, delay: 0.65 }}
             >
-              {hero.secondaryCta.label}
-            </Button>
-          </motion.div>
+              {hero.affiliation}
+            </motion.p>
+          </div>
+
+          <div className="lg:col-span-4 lg:col-start-9 lg:row-span-2 lg:self-center">
+            <Portrait booted={booted} />
+          </div>
+
+          {/* pitch + actions */}
+          <div className="lg:col-span-7">
+            <motion.p
+              className="max-w-md text-pretty text-base leading-relaxed text-haze"
+              initial={{ opacity: 0, y: 18 }}
+              animate={booted ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, ease: EASE_OUT, delay: 0.75 }}
+            >
+              {hero.sub}
+            </motion.p>
+
+            <motion.div
+              className="mt-8 flex flex-wrap items-center gap-4"
+              initial={{ opacity: 0, y: 18 }}
+              animate={booted ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, ease: EASE_OUT, delay: 0.85 }}
+            >
+              <Button
+                href={hero.primaryCta.href}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollTo("projects");
+                }}
+              >
+                {hero.primaryCta.label}
+              </Button>
+              <Button
+                href={hero.secondaryCta.href}
+                variant="ghost"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollTo("contact");
+                }}
+              >
+                {hero.secondaryCta.label}
+              </Button>
+            </motion.div>
+          </div>
         </div>
       </motion.div>
 

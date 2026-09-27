@@ -44,6 +44,9 @@ async function preparePage(browser, viewport) {
     content: `
       nextjs-portal { display: none !important; } /* dev overlay badge */
       .noise::after { display: none !important; } /* fixed grain seams in tall captures */
+      /* fixed atmosphere only paints one viewport in stitched captures */
+      body { position: relative; }
+      .noise::before { position: absolute !important; }
     `,
   });
 
