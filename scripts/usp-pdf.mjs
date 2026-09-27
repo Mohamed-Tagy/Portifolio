@@ -2,8 +2,10 @@
 import puppeteer from "puppeteer-core";
 
 const OUT_PDF = "B:/Me/Tagy-USP.pdf";
-const OUT_PREVIEW =
-  "C:/Users/Admin/AppData/Local/Temp/claude/B--Me/7520bd80-10f2-4aa6-ad16-2c7a76ec6db4/scratchpad/usp-preview.jpg";
+const OUT_PREVIEW = `${
+  process.env.SHOT_DIR ??
+  "C:/Users/Admin/AppData/Local/Temp/claude/B--Me/ce2ebc0d-770f-4dcf-a834-aea1507de523/scratchpad"
+}/usp-preview.jpg`;
 
 const html = `<!doctype html>
 <html><head>
@@ -67,6 +69,24 @@ const html = `<!doctype html>
     letter-spacing: 0.002em;
   }
   .pitch .go { color: var(--trace); font-weight: 650; }
+  .pitch .aud { font-weight: 650; }
+  .audience {
+    margin-top: 7mm;
+    display: grid; grid-template-columns: auto 1fr; align-items: start; gap: 4mm;
+  }
+  .audience .k {
+    font-family: "IBM Plex Mono", monospace; font-size: 8pt;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--dim); padding-top: 1.9mm;
+  }
+  .audience .chips { display: flex; flex-wrap: wrap; gap: 2.2mm; }
+  .audience .chip {
+    font-family: "IBM Plex Mono", monospace; font-size: 7.5pt;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink);
+    border: 1px solid rgba(12, 127, 71, 0.45);
+    background: rgba(12, 127, 71, 0.08);
+    padding: 1.6mm 3mm; border-radius: 0.6mm;
+  }
 
   .display {
     margin-top: 8mm;
@@ -98,6 +118,7 @@ const html = `<!doctype html>
     letter-spacing: 0.08em; color: var(--haze);
   }
   footer .contact { display: grid; gap: 1.6mm; }
+  footer .contact span { white-space: nowrap; }
   footer .nmea { color: var(--dim); }
   section { margin-top: 11mm; }
   section.two { margin-top: auto; padding-bottom: 2mm; }
@@ -115,7 +136,15 @@ const html = `<!doctype html>
 
   <section>
     <div class="sec-label"><span class="idx">[01]</span><span>The pitch</span></div>
-    <p class="pitch">I help businesses turn their ideas and manual, repetitive processes into <span class="go">working digital solutions</span> that save time, cut errors, and create real value — through my skills in Microsoft Dynamics 365 and the Power Platform, AI and computer vision, process automation, and web development.</p>
+    <p class="pitch">I help <span class="aud">small and mid-sized businesses</span> — especially trading, industrial and maritime companies — turn their ideas and manual, repetitive processes into <span class="go">working digital solutions</span> that save time, cut errors, and create real value, through my skills in Microsoft Dynamics 365 and the Power Platform, AI and computer vision, process automation, and web development.</p>
+    <div class="audience">
+      <span class="k">Built for</span>
+      <span class="chips">
+        <span class="chip">Trading &amp; distribution companies</span>
+        <span class="chip">Industrial &amp; maritime operators</span>
+        <span class="chip">Teams adopting Dynamics 365</span>
+      </span>
+    </div>
   </section>
 
   <section class="two">
@@ -131,7 +160,8 @@ const html = `<!doctype html>
   <footer>
     <span class="contact">
       <span>mohamed.120230167@ejust.edu.eg&nbsp;&nbsp;·&nbsp;&nbsp;+20 100 876 5599</span>
-      <span>mohamed-tagy.vercel.app&nbsp;&nbsp;·&nbsp;&nbsp;github.com/Mohamed-Tagy&nbsp;&nbsp;·&nbsp;&nbsp;linkedin.com/in/mohamed-tagy</span>
+      <span>mohamed-tagy.vercel.app</span>
+      <span>github.com/Mohamed-Tagy&nbsp;&nbsp;·&nbsp;&nbsp;linkedin.com/in/mohamed-tagy</span>
     </span>
     <span class="nmea">$MWUSP,V1,ALX*7E</span>
   </footer>

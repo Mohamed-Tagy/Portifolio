@@ -58,7 +58,14 @@ export const usp = {
   label: "What sets me apart",
   lead: "Most developers hand you code.",
   claim: { before: "I hand you a", accent: "verified", after: "system." },
-  body: "I've repaired marine electronics at board level, commissioned radar at live field sites, trained a Vision Transformer that runs on a bare CPU, and delivered Dynamics 365 solutions from requirements to sign-off. That's first-hand knowledge of every layer a solution touches — and nothing I deliver ships until it's tested and verified.",
+  audience:
+    "small and mid-sized businesses whose operations still run on paper, email and spreadsheets",
+  body: "turn those processes into dependable digital systems — built by someone who has repaired the boards, commissioned the radar, trained the models and delivered Dynamics 365 to sign-off. Nothing I deliver ships until it's tested and verified.",
+  segments: [
+    "Trading & distribution companies",
+    "Industrial & maritime operators",
+    "Teams adopting Dynamics 365",
+  ],
   proofs: [
     "Board-level repair",
     "Radar commissioned",

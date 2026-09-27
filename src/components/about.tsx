@@ -42,33 +42,53 @@ export function About() {
               </span>
             </p>
             <p className="mt-6 max-w-3xl text-pretty leading-relaxed text-haze md:text-lg">
+              I help <span className="font-medium text-fog">{usp.audience}</span>{" "}
               {usp.body}
             </p>
-            <ul
-              aria-label="Evidence"
-              className="mt-8 flex flex-wrap gap-2 border-t border-fog/10 pt-6"
-            >
-              {usp.proofs.map((proof) => (
-                <li
-                  key={proof}
-                  className="flex items-center gap-2 rounded-[2px] border border-fog/12 px-3 py-2 font-mono text-[0.625rem] uppercase tracking-[0.14em] text-fog"
-                >
-                  <svg
-                    viewBox="0 0 12 12"
-                    className="h-2.5 w-2.5 text-beacon"
-                    aria-hidden
-                  >
-                    <path
-                      d="M2 6.5 4.8 9 10 3"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.6"
-                    />
-                  </svg>
-                  {proof}
-                </li>
-              ))}
-            </ul>
+            <dl className="mt-8 grid gap-y-2 border-t border-fog/10 pt-6 md:grid-cols-[7rem_1fr] md:items-center md:gap-x-8 md:gap-y-4">
+              <dt className="font-mono text-[0.625rem] uppercase tracking-[0.2em] text-dim">
+                Built for
+              </dt>
+              <dd>
+                <ul className="flex flex-wrap gap-2">
+                  {usp.segments.map((segment) => (
+                    <li
+                      key={segment}
+                      className="rounded-[2px] border border-beacon/40 bg-beacon/10 px-3 py-2 font-mono text-[0.625rem] uppercase tracking-[0.14em] text-fog"
+                    >
+                      {segment}
+                    </li>
+                  ))}
+                </ul>
+              </dd>
+              <dt className="mt-4 font-mono text-[0.625rem] uppercase tracking-[0.2em] text-dim md:mt-0">
+                Proven by
+              </dt>
+              <dd>
+                <ul className="flex flex-wrap gap-2">
+                  {usp.proofs.map((proof) => (
+                    <li
+                      key={proof}
+                      className="flex items-center gap-2 rounded-[2px] border border-fog/12 px-3 py-2 font-mono text-[0.625rem] uppercase tracking-[0.14em] text-fog"
+                    >
+                      <svg
+                        viewBox="0 0 12 12"
+                        className="h-2.5 w-2.5 text-beacon"
+                        aria-hidden
+                      >
+                        <path
+                          d="M2 6.5 4.8 9 10 3"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="1.6"
+                        />
+                      </svg>
+                      {proof}
+                    </li>
+                  ))}
+                </ul>
+              </dd>
+            </dl>
           </div>
         </Rise>
 
