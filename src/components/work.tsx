@@ -5,7 +5,7 @@ import { useRef } from "react";
 import { projects, type Project } from "@/lib/data";
 import { clipReveal } from "@/lib/motion";
 import { Instrument } from "./instruments";
-import { Rise, TickFrame } from "./primitives";
+import { Rise, TickFrame, ULink } from "./primitives";
 import { SectionHead } from "./section-head";
 
 export function Work() {
@@ -140,6 +140,18 @@ function ProjectRow({ project, flip }: { project: Project; flip: boolean }) {
                   Status
                 </dt>
                 <dd className="text-sm text-fog">{project.status}</dd>
+              </>
+            )}
+            {project.repo && (
+              <>
+                <dt className="font-mono text-[0.625rem] uppercase tracking-[0.2em] text-dim">
+                  Code
+                </dt>
+                <dd className="text-sm text-fog">
+                  <ULink href={project.repo} external>
+                    View repository on GitHub
+                  </ULink>
+                </dd>
               </>
             )}
           </dl>

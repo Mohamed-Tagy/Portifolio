@@ -81,6 +81,7 @@ export type Project = {
   category: string;
   year?: string;
   status?: string;
+  repo?: string;
   role: string;
   description: string;
   tech: string[];
@@ -98,6 +99,7 @@ export const projects: Project[] = [
       "A Vision Transformer classifies eye state from live camera input at 99.2% validation accuracy, raising an alert after five seconds of sustained closure. Inference is tuned to 15 FPS entirely on CPU — no GPU, any laptop — and an Arduino pipeline extends alerts into physical hardware: buzzer, vibration, whatever wakes you.",
     tech: ["Python", "PyTorch", "OpenCV", "ViT", "Arduino"],
     visual: "vision",
+    repo: "https://github.com/Mohamed-Tagy/Driver-Drowsiness",
   },
   {
     fix: "02",
@@ -218,6 +220,7 @@ export type LogEntry = {
   title: string;
   place: string;
   points: string[];
+  certificate?: string;
 };
 
 export const log: LogEntry[] = [
@@ -226,6 +229,7 @@ export const log: LogEntry[] = [
     year: "2026",
     org: "Systems Limited",
     title: "Solution Architect & Developer Intern",
+    certificate: "https://drive.google.com/file/d/1mA69UiDBGiKeJC4PmJmsHmiIm4tNX6jl/view",
     place: "Smart Village, Giza",
     points: [
       "Delivered business solutions end-to-end on Dynamics 365, Dataverse and the Power Platform — requirements capture through tested implementation.",
@@ -260,6 +264,7 @@ export const log: LogEntry[] = [
     year: "2025",
     org: "Marcom Trade Co.",
     title: "Service Engineer Intern — Electronics Repair",
+    certificate: "https://drive.google.com/file/d/1AR3hLF2FrGDnKkJWRjs0qo2z66afyZHN/view",
     place: "Alexandria",
     points: [
       "Diagnosed and resolved circuit-level faults on motherboards used in marine equipment, isolating root causes with senior engineers.",

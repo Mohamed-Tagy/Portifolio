@@ -3,7 +3,7 @@
 import { motion, useScroll } from "motion/react";
 import { useRef } from "react";
 import { log } from "@/lib/data";
-import { Rise } from "./primitives";
+import { Rise, ULink } from "./primitives";
 import { SectionHead } from "./section-head";
 
 export function Experience() {
@@ -91,6 +91,15 @@ export function Experience() {
                         </li>
                       ))}
                     </ul>
+                    {entry.certificate && (
+                      <ULink
+                        href={entry.certificate}
+                        external
+                        className="mt-4 font-mono text-[0.6875rem] uppercase tracking-[0.16em] text-beacon"
+                      >
+                        View certificate
+                      </ULink>
+                    )}
                   </div>
                 </div>
               </Rise>
