@@ -25,7 +25,7 @@ export const nav = [
 export const hero = {
   name: ["Mohamed", "Waleed Tagy"],
   title: "Solution Architect & Developer",
-  affiliation: "Intern @ Systems Limited — CSE @ E-JUST, Class of 2028",
+  affiliation: "Intern @ Systems Limited, Jun–Sep 2026 — CSE @ E-JUST, Class of 2028",
   eyebrowA: "SYSTEMS THAT KEEP WATCH",
   eyebrowB: "31°12′N 29°55′E — ALEXANDRIA, EG",
   sub: "Vision models on bare CPUs. Radar on live stations. Business platforms and client portals shipped to sign-off. I work the seam where software meets hardware — and stay until it holds.",
@@ -36,7 +36,7 @@ export const hero = {
 export const about = {
   bio: [
     "I'm Mohamed — a Computer Science & Engineering student at the Egypt-Japan University of Science and Technology, working where code meets circuitry. I've shipped a Vision Transformer that watches for driver drowsiness on nothing but a laptop CPU, parsed live NMEA streams from vessels, and commissioned dual-station marine radar over fiber at operational field sites.",
-    "Between semesters I deliver enterprise solutions on Microsoft Dynamics 365 and the Power Platform — from business requirements documents to tested, signed-off implementations — and build web portals freelance, including a purchase-order system now running in production at a marine electronics company. The destination is solution architecture; the discipline is the same everywhere: understand the system, respect the constraint, verify before handover.",
+    "This summer at Systems Limited I delivered enterprise solutions on Microsoft Dynamics 365 and the Power Platform — from business requirements documents to tested, signed-off implementations — and I build web portals freelance, including a purchase-order system now running in production at a marine electronics company. The destination is solution architecture; the discipline is the same everywhere: understand the system, respect the constraint, verify before handover.",
   ],
   facts: [
     { k: "BASE", v: "Alexandria, Egypt" },
@@ -222,15 +222,15 @@ export type LogEntry = {
 
 export const log: LogEntry[] = [
   {
-    period: "AUG 2026 — PRESENT",
+    period: "JUN — SEP 2026",
     year: "2026",
     org: "Systems Limited",
     title: "Solution Architect & Developer Intern",
     place: "Smart Village, Giza",
     points: [
-      "Delivering business solutions end-to-end on Dynamics 365, Dataverse and the Power Platform — requirements capture through tested implementation.",
-      "Authoring BRDs from stakeholder needs and translating them into functional design documents mapped to concrete data models.",
-      "Validating delivered solutions against FDD acceptance criteria before sign-off.",
+      "Delivered business solutions end-to-end on Dynamics 365, Dataverse and the Power Platform — requirements capture through tested implementation.",
+      "Authored BRDs from stakeholder needs and translated them into functional design documents mapped to concrete data models.",
+      "Validated delivered solutions against FDD acceptance criteria before sign-off.",
     ],
   },
   {
