@@ -28,14 +28,14 @@ export const hero = {
   affiliation: "Intern @ Systems Limited, Jun–Sep 2026 — CSE @ E-JUST, Class of 2028",
   eyebrowA: "SYSTEMS THAT KEEP WATCH",
   eyebrowB: "31°12′N 29°55′E — ALEXANDRIA, EG",
-  sub: "Vision models on bare CPUs. Radar on live stations. Business platforms and client portals shipped to sign-off. I work the seam where software meets hardware — and stay until it holds.",
+  sub: "Vision models in real time. Radar on live stations. Business platforms and client portals shipped to sign-off. I work the seam where software meets hardware — and stay until it holds.",
   primaryCta: { label: "View selected work", href: "#projects" },
   secondaryCta: { label: "Get in touch", href: "#contact" },
 };
 
 export const about = {
   bio: [
-    "I'm Mohamed — a Computer Science & Engineering student at the Egypt-Japan University of Science and Technology, working where code meets circuitry. I've shipped a Vision Transformer that watches for driver drowsiness on nothing but a laptop CPU, parsed live NMEA streams from vessels, and commissioned dual-station marine radar over fiber at operational field sites.",
+    "I'm Mohamed — a Computer Science & Engineering student at the Egypt-Japan University of Science and Technology, working where code meets circuitry. I've shipped a Vision Transformer that watches for driver drowsiness in real time, parsed live NMEA streams from vessels, and commissioned dual-station marine radar over fiber at operational field sites.",
     "This summer at Systems Limited I delivered enterprise solutions on Microsoft Dynamics 365 and the Power Platform — from business requirements documents to tested, signed-off implementations — and I build web portals freelance, including a purchase-order system now running in production at a marine electronics company. The destination is solution architecture; the discipline is the same everywhere: understand the system, respect the constraint, verify before handover.",
   ],
   facts: [
@@ -69,7 +69,7 @@ export const usp = {
   proofs: [
     "Board-level repair",
     "Radar commissioned",
-    "99.2% ViT · 15 FPS on CPU",
+    "99.2% ViT · 22 ms per frame",
     "D365 · BRD → sign-off",
     "Client portal in production",
   ],
@@ -93,10 +93,10 @@ export const projects: Project[] = [
     fix: "01",
     title: "Drowsiness Detection System",
     category: "Computer Vision · Real-time",
-    year: "2025",
+    year: "2026",
     role: "Design & build — personal project",
     description:
-      "A Vision Transformer classifies eye state from live camera input at 99.2% validation accuracy, raising an alert after five seconds of sustained closure. Inference is tuned to 15 FPS entirely on CPU — no GPU, any laptop — and an Arduino pipeline extends alerts into physical hardware: buzzer, vibration, whatever wakes you.",
+      "A Vision Transformer classifies eye state from live camera input at 99.2% test accuracy — 98.4% on people it never saw in training. A closed-eye counter escalates from an on-screen Warning to a Critical alarm on an Arduino module of LEDs and a buzzer; on scripted video, every posed eye closure raised a Warning within a median 0.27 s. Each 720p frame takes 22 ms on a laptop GPU.",
     tech: ["Python", "PyTorch", "OpenCV", "ViT", "Arduino"],
     visual: "vision",
     repo: "https://github.com/Mohamed-Tagy/Driver-Drowsiness",
@@ -159,9 +159,9 @@ export const skillGroups: SkillGroup[] = [
     code: "SYS.A",
     skills: [
       { name: "Python", note: "Primary language across every system" },
-      { name: "PyTorch", note: "ViT training and CPU-tuned inference" },
+      { name: "PyTorch", note: "ViT fine-tuning and real-time inference" },
       { name: "OpenCV", note: "Live camera capture pipelines" },
-      { name: "Vision Transformers", note: "99.2% validation-accuracy classifier" },
+      { name: "Vision Transformers", note: "99.2% test-accuracy eye-state classifier" },
       { name: "JavaScript", note: "Freelance client portals in production" },
       { name: "HTML / CSS", note: "Production web delivery" },
       { name: "MATLAB", note: "Engineering computation" },
@@ -292,7 +292,7 @@ export const principles = [
   {
     n: "02",
     title: "Design for the constraint",
-    body: "The drowsiness detector runs on CPUs because real drivers don't carry GPUs. The constraint isn't the obstacle — it's the spec.",
+    body: "Marine data streams arrive malformed, so the NMEA parser drops bad frames without ever stalling. The constraint isn't the obstacle — it's the spec.",
   },
   {
     n: "03",

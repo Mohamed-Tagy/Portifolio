@@ -105,8 +105,8 @@ function VisionInstrument({ active }: { active: boolean }) {
 
       {/* annotations */}
       <text x="28" y="40" className={label}>CAM 01 — LIVE FEED</text>
-      <text x="28" y="336" className={labelDim}>VIT CLASSIFIER · VAL ACC 99.2%</text>
-      <text x="452" y="40" textAnchor="end" className={labelDim}>CPU — 15 FPS</text>
+      <text x="28" y="336" className={labelDim}>VIT CLASSIFIER · TEST ACC 99.2%</text>
+      <text x="452" y="40" textAnchor="end" className={labelDim}>GPU — 22 MS / FRAME</text>
       <g className="transition-opacity duration-500 opacity-70 group-hover:opacity-100">
         <circle cx="380" cy="331" r="3" fill="var(--color-beacon)" className={active ? "animate-blink" : ""} />
         <text x="392" y="336" className={label}>STATE: AWAKE</text>
