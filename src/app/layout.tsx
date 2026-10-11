@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://mohamed-tagy.vercel.app"),
   title: "Mohamed Waleed Tagy — Solution Architect & Developer",
   description:
-    "Mohamed Waleed Tagy builds systems that keep watch: Dynamics 365 and Power Platform solutions delivered to sign-off, real-time computer vision on bare CPUs (99.2% ViT), marine radar commissioned in the field, and freelance web portals in production. Alexandria, Egypt.",
+    "Mohamed Waleed Tagy builds systems that keep watch: Dynamics 365 and Power Platform solutions delivered to sign-off, real-time computer vision (99.2% ViT test accuracy), marine radar commissioned in the field, and freelance web portals in production. Alexandria, Egypt.",
   keywords: [
     "Mohamed Tagy",
     "solution architect",
